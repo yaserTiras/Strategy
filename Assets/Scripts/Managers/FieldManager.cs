@@ -97,6 +97,12 @@ public class FieldManager : Singleton<FieldManager>
         return isPlaceble;
     }
 
+    public void ResetField()
+    {
+        foreach (Cell c in Cells.Values)
+            c.ResetColor();
+    }
+
     public Vector3 GetMiddlePosition(Item item)
     {
         Vector3 placedPosition = Vector3.zero;

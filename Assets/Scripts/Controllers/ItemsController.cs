@@ -51,6 +51,26 @@ public class ItemsController : MonoBehaviour
         }
     }
 
+    private void OnItemReleased(Item item)
+    {
+        switch (item.Type)
+        {
+            case ItemType.Barracks:
+                barracks.Enqueue(item.GetComponent<Barracks>());
+                break;
+            case ItemType.Soldier:
+                soldiers.Enqueue(item.GetComponent<Soldier>());
+                break;
+            case ItemType.PowerPlant:
+                powerPlants.Enqueue(item.GetComponent<PowerPlant>());
+                break;
+            case ItemType.Self:
+                break;
+            default:
+                break;
+        }
+    }
+
     private void Initialize()
     {
         GameObject obj;

@@ -15,7 +15,6 @@ public class InputManager : MonoBehaviour
     public PointerEventData pointerData;
     List<RaycastResult> raycastResults = new List<RaycastResult>();
 
-    private Transform targetToHold;
     public float timeToStartDrag = 0.1f;
     private float holdDuration = 0;
     private Item clickedObject;
@@ -24,10 +23,6 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        mulX = Screen.width / 720;
-        mulY = Screen.height / 1280;
-        //sens = GameplaySettings.instance.sensitivity;
         pointerData = new PointerEventData(eventSystem);
         EventsManager.OnPointerOverUI += SetRaycaster;
     }

@@ -58,6 +58,7 @@ public abstract class Item : MonoBehaviour
         }
         else
         {
+            FieldManager.instance.ResetField();
             gameObject.SetActive(false);
         }
     }

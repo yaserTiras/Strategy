@@ -17,11 +17,11 @@ public class CameraController : Singleton<CameraController>
     private void SetCamera()
     {
         Vector3 pos;
-        pos.y = (FieldManager.instance._gridWidth * 14f - FieldManager.instance._gridHeight * 4f * 0.35f);
-        pos.x = (FieldManager.instance._gridHeight * 5.1f - 2f) * 0.5f;
+        pos.y = (FieldManager.instance._gridHeight * 14.8f);
+        pos.x = (FieldManager.instance._gridWidth * 9.5f) * 0.5f;
         pos.z = -10f;
-
-        float pixels = 128f / Screen.width;
+        float sceneWidth = 408f;
+        float pixels = sceneWidth / Screen.width;
         float size = 0.5f * pixels * Screen.height;
         mainCamera.orthographicSize = size;
         transform.position = pos;

@@ -31,7 +31,6 @@ public static class Pathfinder
                     currentPathTile = currentPathTile.Connection;
                     count--;
                     if (count < 0) throw new Exception();
-                    Debug.Log("sdfsdf");
                 }
                 return path;
             }

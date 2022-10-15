@@ -7,10 +7,13 @@ public class Soldier : Item
 
     public Cell currentCell;
     private IEnumerator travelNumerator;
-  
+    private Collider2D myCollider;
     protected override void SetUp()
     {
         Dimensions = new int[1, 1];
+
+        myCollider = GetComponent<Collider2D>();
+        myCollider.enabled = false;
     }
 
     public override void CheckHittedCell()
@@ -34,6 +37,7 @@ public class Soldier : Item
     {
         IsPlaced = true;      
         transform.position = spawnedCell.transform.position;
+        myCollider.enabled = true;
         gameObject.SetActive(true);
         currentCell = spawnedCell;
         Travel(targetCell);
@@ -63,6 +67,11 @@ public class Soldier : Item
             yield return null;
         }
         currentCell = path[0];
+    }
+
+    private void OccupyCell(Cell cell)
+    {
+        cell.Walkable = false;
     }
 
     public override void OnEnable()

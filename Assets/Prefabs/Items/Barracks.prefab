@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1471419785976671821}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SoldiersTargetPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8105675572806941349}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SoldiersSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 6329046663016522542}
   - component: {fileID: 8189800876871773501}
   - component: {fileID: -3565552638531302607}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Barracks
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6329046663016522541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8105675572806941349}
@@ -132,8 +132,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 638756059
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bd4b1081a5ec789489195acf913f2f72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -167,7 +167,6 @@ MonoBehaviour:
   producer: 0
   raycastPosition: {x: 0, y: 0, z: 0}
   hittedCell: {fileID: 0}
-  soldiersSpawnPoint: {fileID: 8105675572806941349}
   soldiersTargetPoint: {fileID: 1471419785976671821}
   producedSoldierTargetCell: {fileID: 0}
 --- !u!61 &-3565552638531302607
@@ -180,19 +179,19 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 43.49091, y: 37.375}
+    oldSize: {x: 115.97575, y: 99.666664}
     newSize: {x: 21.71875, y: 18.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 43.49091, y: 37.375}
+  m_Size: {x: 115.97575, y: 99.666664}
   m_EdgeRadius: 0

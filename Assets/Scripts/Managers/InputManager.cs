@@ -104,8 +104,10 @@ public class InputManager : MonoBehaviour
 
     private void MouseDownInGame(RaycastHit2D hit)
     {
-        if (!hit)
+        if (hit.collider == null)
+        {
             return;
+        }
         clickedObject = hit.collider.GetComponent<Item>();
     }
 
@@ -166,6 +168,8 @@ public class InputManager : MonoBehaviour
 
     private void MouseUpUI()
     {
+        if (!clickedObject)
+            return;
         EventsManager.instance.ItemReleased(clickedObject.IsPlaced);
         if (startDrag)
         {
@@ -180,7 +184,6 @@ public class InputManager : MonoBehaviour
         graphicRaycaster.Raycast(pointerData, raycastResults);
         if (raycastResults.Count == 1)
         {
-            //Debug.Log(raycastResults[0].gameObject.name);
             raycastResults[0].gameObject.GetComponent<Item>().OnClick();
         }
         else
@@ -206,7 +209,6 @@ public class InputManager : MonoBehaviour
             return;
         }
     }
-
 
     public void SetRaycaster(GraphicRaycaster raycaster)
     {

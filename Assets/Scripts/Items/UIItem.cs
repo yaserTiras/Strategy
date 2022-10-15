@@ -13,7 +13,6 @@ public class UIItem : Item
 
     public Vector2 GetCellSizeDelta()
     {
-        Debug.Log("Ret " + rectTransform.sizeDelta);
         return rectTransform.sizeDelta;
     }
 
@@ -22,9 +21,15 @@ public class UIItem : Item
         return rectTransform.anchoredPosition;
     }
 
+    public void SetSize(float width, float height)
+    {
+        rectTransform.sizeDelta = new Vector2(width, height);
+    }
+
     public void SetAnchoredPosition(Vector2 anchoredPosition)
     {
         rectTransform.anchoredPosition = anchoredPosition;
+        rectTransform.ForceUpdateRectTransforms();
     }
 
     public Vector3 GetWorldPosition()
@@ -52,5 +57,11 @@ public class UIItem : Item
     public override void OnRelease()
     {
         base.OnRelease();
+    }
+
+    private void OnValidate()
+    {
+        if (!rectTransform)
+            rectTransform = GetComponent<RectTransform>();
     }
 }

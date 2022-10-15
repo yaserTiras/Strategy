@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class FieldManager : Singleton<FieldManager>
 {
-    [Range(5, 8)] public int _gridWidth = 1;
-    [Range(5, 17)] public int _gridHeight = 1;
+    [Range(2, 9)] public int _gridWidth = 1;
+    [Range(2, 7)] public int _gridHeight = 1;
 
     public Dictionary<Vector2, Cell> Cells { get; private set; }
 

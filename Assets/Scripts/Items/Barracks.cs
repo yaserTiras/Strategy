@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Barracks : Item
 {
-    public Transform soldiersSpawnPoint;
+    private Transform soldiersSpawnPoint;
     public Transform soldiersTargetPoint;
     public Cell producedSoldierTargetCell;
-
+    private Collider2D myCollider;
 
     protected override void SetUp()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
+        myCollider = GetComponent<Collider2D>();
+        myCollider.enabled = false;
         SpriteRenderer.sprite = Sprite;
         Dimensions = new int[4, 4];
     }
@@ -42,7 +44,7 @@ public class Barracks : Item
             Debug.Log("Soldiers Spawn Point is out of range");
             return;
         }
-
+        myCollider.enabled = true;
         producedSoldierTargetCell = cell;
     }
 

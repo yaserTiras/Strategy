@@ -112,4 +112,6 @@ public class ItemsController : MonoBehaviour
         EventsManager.instance.clickedUI += OnProductionItemClicked;
         EventsManager.instance.onGameInitialized -= Initialize;
     }
+
+   
 }
